@@ -73,12 +73,12 @@ void main()
 	// this fragment's final color.
 	// == ======================================
 	// Phase 1: Directional lighting
-	vec3 result = CalcDirLight(dirLight, material, norm, viewDir)*vec3(0.4,0.4,0.4);
+	vec3 result = CalcDirLight(dirLight, material, norm, viewDir);
 	// Phase 2: Point lights
 	for (int i = 0; i < NR_POINT_LIGHTS; i++)
 		result += CalcPointLight(pointLights[i], material, norm, Position, viewDir);
 	// Phase 3: Spot light
-	result += CalcSpotLight(spotLight, material, norm, Position, viewDir)*vec4(1.0, 0.0, 0.0, 1.0);
+	result += CalcSpotLight(spotLight, material, norm, Position, viewDir);
 
 	color = vec4(result, 1.0);
 }
