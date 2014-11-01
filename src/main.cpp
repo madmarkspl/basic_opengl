@@ -196,7 +196,7 @@ int main()
 		{
 			modelMatrix = glm::mat4();
 			modelMatrix = glm::translate(modelMatrix, pointLightPositions[i]);
-			modelMatrix = glm::scale(modelMatrix, glm::vec3(0.1f)); // Make it a smaller cube
+			modelMatrix = glm::scale(modelMatrix, glm::vec3(0.05f)); // Make it a smaller cube
 			glUniformMatrix4fv(uniModel, 1, GL_FALSE, glm::value_ptr(modelMatrix));
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
